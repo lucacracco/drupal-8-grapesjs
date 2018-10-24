@@ -1,11 +1,19 @@
 grapesjs:
-  version: VERSION
-  css:
-    theme:
-      libs/grapesjs/dist/css/grapes.min.css: { minified: true }
+  remote: https://github.com/artf/grapesjs/
+  version: 0.14.33
+  license:
+    name: MIT
+    url: https://github.com/artf/grapesjs/
+    gpl-compatible: true
   js:
-    libs/grapesjs/dist/grapes.min.js: { minified: true }
-    
+    /libraries/grapesjs/dist/grapes.min.js: { minified: true }
+    # https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.14.33/grapes.min.js: { type: external, minified: true }
+  css:
+    component:
+      /libraries/grapesjs/dist/css/grapes.min.css: { minified: true }
+      # todo: resolve "Access to font at 'https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.14.33/fonts/fontawesome-webfont.woff2?v=4.7.0' from origin 'http://drupal.docker.localhost' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      #https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.14.33/css/grapes.min.css: { type: external, minified: true }
+
 grapesjs-init:
   version: VERSION
   css:
@@ -19,19 +27,19 @@ grapesjs-init:
     js/plugin.js: {}
     js/init.js: {}
   dependencies:
-    - core/jquery
-    - grapesjs/grapesjs
-    
+  - core/jquery
+  - grapesjs/grapesjs
+
 grapesjs-resize:
   version: VERSION
   js:
     js/responsive-resizing.js: {}
   dependencies:
-    - core/jquery
+  - core/jquery
 
 grapesjs-test:
   version: VERSION
   js:
     js/test.js: {}
   dependencies:
-    - core/jquery
+  - core/jquery
